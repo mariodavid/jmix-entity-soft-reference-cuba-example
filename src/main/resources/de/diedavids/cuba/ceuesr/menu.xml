@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://jmix.io/schema/ui/menu">
+
+    <menu caption="msg://de.diedavids.cuba.ceuesr.web/menu-config.application-ceuesr" id="application-ceuesr" insertBefore="administration">
+        <item caption="msg://de.diedavids.cuba.ceuesr.web/menu-config.ceuesr_Customer.browse" screen="ceuesr_Customer.browse" />
+        <item caption="msg://de.diedavids.cuba.ceuesr.web/menu-config.ceuesr_Document.browse" screen="ceuesr_Document.browse"/>
+        <item caption="msg://de.diedavids.cuba.ceuesr.web/menu-config.ceuesr_Order.browse" screen="ceuesr_Order.browse"/>
+
+
+        <item screen="sec$User.browse" caption="msg://de.diedavids.cuba.ceuesr.screen.user/UserBrowse.caption"/>
+        <item screen="themeSettingsScreen" caption="msg://io.jmix.ui.app.themesettings/themeSettings.caption"/>
+    </menu>
+
+</menu-config>

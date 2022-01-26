@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window" xmlns:dynattr="http://jmix.io/schema/dynattr/ui"
+        xmlns:cuba="http://schemas.haulmont.com/cuba/screen/compatibility"
+        caption="msg://editorCaption"
+        focusComponent="form"
+>
+    <data>
+        <instance id="orderDc"
+                  class="de.diedavids.cuba.ceuesr.entity.Order"
+                  fetchPlan="_local">
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="orderDc">
+            <column width="250px">
+                <dateField id="orderDateField" property="orderDate"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+    <facets>
+        <dynattr:dynamicAttributes/>
+    </facets>
+</window>

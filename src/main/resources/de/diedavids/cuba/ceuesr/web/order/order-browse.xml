@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window" xmlns:dynattr="http://jmix.io/schema/dynattr/ui"
+        xmlns:cuba="http://schemas.haulmont.com/cuba/screen/compatibility"
+        caption="msg://browseCaption"
+        focusComponent="ordersTable"
+>
+    <data readOnly="true">
+        <collection id="ordersDc"
+                    class="de.diedavids.cuba.ceuesr.entity.Order"
+                    fetchPlan="_local">
+            <loader id="ordersDl">
+                <query>
+                    <![CDATA[select e from ceuesr_Order e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="ordersTable"
+            spacing="true">
+        <cuba:cubaFilter id="filter"
+                         applyTo="ordersTable"
+                         dataLoader="ordersDl">
+            <properties include=".*"/>
+        </cuba:cubaFilter>
+        <groupTable id="ordersTable"
+                    width="100%"
+                    dataContainer="ordersDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="orderDate"/>
+            </columns>
+            <simplePagination/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="ordersTable.create"/>
+                <button id="editBtn" action="ordersTable.edit"/>
+                <button id="removeBtn" action="ordersTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+    <facets>
+        <dynattr:dynamicAttributes/>
+    </facets>
+</window>
